@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Privacy Policy — BillFlow</title>
+<style>
+  :root { --ink:#2C001E; --muted:#5E5959; --brand:#E95420; --line:#EAE4DF; --bg:#FFFFFF; }
+  html,body { margin:0; padding:0; background:#FAFAFA; color:var(--ink);
+              font:16px/1.55 -apple-system,Segoe UI,Ubuntu,Roboto,sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; padding:48px 24px; background:var(--bg);
+          border-radius:8px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  h1 { color:var(--ink); font-size:28px; margin:0 0 6px; }
+  h2 { color:var(--brand); font-size:18px; margin:28px 0 8px; }
+  p,li { color:var(--muted); }
+  a { color:var(--brand); }
+  .meta { color:#8A8581; font-size:14px; }
+  .foot { border-top:1px solid var(--line); margin-top:32px; padding-top:16px;
+          font-size:13px; color:#8A8581; }
+  .brand { letter-spacing:2px; font-weight:700; color:var(--brand); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated 30 June 2026</p>
+
+  <p>This policy describes how BillFlow ("we", "the app") collects and uses your
+  data. By using BillFlow you agree to this policy.</p>
+
+  <h2>1. What we collect</h2>
+  <ul>
+    <li><strong>Account</strong>: email address and an encrypted refresh
+        token, used to sign you in across devices.</li>
+    <li><strong>Business profile</strong>: business name, address, GST and
+        license numbers, phone — to print on your invoices.</li>
+    <li><strong>Operational data</strong>: products, customers, suppliers,
+        bills, payments, prescriptions metadata. Stored in your own
+        per-user database on this device and synced to your account
+        on Supabase.</li>
+  </ul>
+
+  <h2>2. What stays on your device</h2>
+  <p>Prescription image files (photos and scans of doctors' prescriptions)
+  are saved to your local disk only. The image bytes are <strong>never
+  uploaded</strong>. Only the structured Schedule H1 register fields
+  (patient name, doctor name, date, diagnosis) sync.</p>
+
+  <h2>3. How your data is secured</h2>
+  <ul>
+    <li>Local data is held in SQLite per user (<code>billflow_&lt;userId&gt;.sqlite</code>).
+        Each user on the same machine has an isolated store.</li>
+    <li>Refresh tokens are encrypted on Windows via DPAPI before being
+        written to the registry.</li>
+    <li>All cloud calls go over HTTPS to Supabase.</li>
+    <li>Row-Level Security on the server limits every read and write to
+        rows you own.</li>
+  </ul>
+
+  <h2>4. Subscriptions and payments</h2>
+  <p>BillFlow uses <strong>Razorpay</strong> for subscription processing.
+  Razorpay receives the minimum information required to complete the
+  transaction (name, email, billing details). Subscription fees are
+  <strong>non-refundable</strong> once the billing cycle has started.</p>
+
+  <h2>5. Sharing</h2>
+  <p>We do not sell your data. We share data only with:</p>
+  <ul>
+    <li>Supabase — to host your account and synced data.</li>
+    <li>Razorpay — to process subscription payments.</li>
+    <li>Authorities — when legally required.</li>
+  </ul>
+
+  <h2>6. Your rights</h2>
+  <p>You can sign out at any time, which clears the local session on this
+  device. To delete your account and server-side data, contact us at the
+  address below.</p>
+
+  <h2>7. Contact</h2>
+  <p>Questions or requests:
+  <a href="mailto:rahilwani8090@gmail.com">rahilwani8090@gmail.com</a></p>
+
+  <div class="foot">
+    Developed by <span class="brand">SDX STUDIO</span>
+  </div>
+</div>
+</body>
+</html>
